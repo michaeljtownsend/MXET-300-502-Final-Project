@@ -1,0 +1,603 @@
+[
+    {
+        "id": "acdbcc3e.5f30a",
+        "type": "tab",
+        "label": "Final Project Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "73aabad2.ccdf44",
+        "type": "ui_template",
+        "z": "acdbcc3e.5f30a",
+        "group": "112a075e.b4c559",
+        "name": "Stream",
+        "order": 1,
+        "width": 6,
+        "height": 12,
+        "format": "<img src=\"http://192.168.8.1:8090/?action=stream\"/>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 320,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0984b08.9ef5a8",
+        "type": "inject",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "73486cb5.556314",
+                "bf8ebd4a.7fd4c"
+            ]
+        ]
+    },
+    {
+        "id": "73486cb5.556314",
+        "type": "ui_slider",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "label": "Color to Track",
+        "tooltip": "",
+        "group": "cdfc2e26.64916",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "slider_choice",
+        "min": "1",
+        "max": "3",
+        "step": 1,
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "e6f56aca.632398",
+                "e7bf9ee4.1de55"
+            ]
+        ]
+    },
+    {
+        "id": "e6f56aca.632398",
+        "type": "file",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/slider_choice",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 930,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7bf9ee4.1de55",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "cdfc2e26.64916",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "Slider Choice",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 950,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "bf8ebd4a.7fd4c",
+        "type": "file",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/slider_choice",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 630,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "40de3914.aede38",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "cdfc2e26.64916",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Pink = 1",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 660,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a4bd51b3.e6d86",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "cdfc2e26.64916",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Blue = 2",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 820,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "4c0aad0a.1eacc4",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "cdfc2e26.64916",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Green = 3",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 960,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "399403df.abcb7c",
+        "type": "inject",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 360,
+        "wires": [
+            [
+                "b44d4500.6e57d8",
+                "4cb02932.8cdf88",
+                "861ba8a3.72c788",
+                "9ecbd71c.debfc8",
+                "e9a2e4c5.bfe938",
+                "3bceac91.828aa4",
+                "17ae7098.34110f",
+                "7ed152bf.e2194c"
+            ]
+        ]
+    },
+    {
+        "id": "b44d4500.6e57d8",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/radius.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 630,
+        "y": 420,
+        "wires": [
+            [
+                "5f609098.c37eb"
+            ]
+        ]
+    },
+    {
+        "id": "4cb02932.8cdf88",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/distance_away.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 650,
+        "y": 360,
+        "wires": [
+            [
+                "ae44ad73.bc2de"
+            ]
+        ]
+    },
+    {
+        "id": "ae44ad73.bc2de",
+        "type": "ui_chart",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "group": "826beb48.533878",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "label": "Distance to Ball (cm)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "150",
+        "removeOlder": "15",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#0e6ae1",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 930,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f609098.c37eb",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "930c5b8c.9d09a8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Radius of Target (pixels)",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 920,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "861ba8a3.72c788",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/RL.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 620,
+        "y": 480,
+        "wires": [
+            [
+                "9ccc6a5e.87a3c8"
+            ]
+        ]
+    },
+    {
+        "id": "9ccc6a5e.87a3c8",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "ba20aee.0e8355",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Moving",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 970,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9ecbd71c.debfc8",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/xdot.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 620,
+        "y": 600,
+        "wires": [
+            [
+                "3d6ccfc4.a88b6"
+            ]
+        ]
+    },
+    {
+        "id": "3d6ccfc4.a88b6",
+        "type": "ui_gauge",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "group": "826beb48.533878",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "X Dot",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 990,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3bceac91.828aa4",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/FB.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 620,
+        "y": 540,
+        "wires": [
+            [
+                "78628afb.91f274"
+            ]
+        ]
+    },
+    {
+        "id": "78628afb.91f274",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "ba20aee.0e8355",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Moving",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 970,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e9a2e4c5.bfe938",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/adcread.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 640,
+        "y": 720,
+        "wires": [
+            [
+                "f53082f2.946a7"
+            ]
+        ]
+    },
+    {
+        "id": "f53082f2.946a7",
+        "type": "ui_gauge",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "group": "930c5b8c.9d09a8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "DC Voltage",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "12",
+        "colors": [
+            "#e52e2e",
+            "#e6c700",
+            "#43cb3a"
+        ],
+        "seg1": "7",
+        "seg2": "10",
+        "x": 970,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "4ad03e11.15503",
+        "type": "ui_gauge",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "group": "826beb48.533878",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Theta Dot",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 980,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "17ae7098.34110f",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/tdot.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 630,
+        "y": 660,
+        "wires": [
+            [
+                "4ad03e11.15503"
+            ]
+        ]
+    },
+    {
+        "id": "7ed152bf.e2194c",
+        "type": "file in",
+        "z": "acdbcc3e.5f30a",
+        "name": "",
+        "filename": "/tmp/detection.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 650,
+        "y": 780,
+        "wires": [
+            [
+                "162d74c6.37713b"
+            ]
+        ]
+    },
+    {
+        "id": "162d74c6.37713b",
+        "type": "ui_text",
+        "z": "acdbcc3e.5f30a",
+        "group": "cdfc2e26.64916",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 990,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "112a075e.b4c559",
+        "type": "ui_group",
+        "name": "Stream",
+        "tab": "be2adfe.9f92d2",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "cdfc2e26.64916",
+        "type": "ui_group",
+        "name": "Color Sliders",
+        "tab": "be2adfe.9f92d2",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "826beb48.533878",
+        "type": "ui_group",
+        "name": "Values",
+        "tab": "be2adfe.9f92d2",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "930c5b8c.9d09a8",
+        "type": "ui_group",
+        "name": "Readings",
+        "tab": "be2adfe.9f92d2",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ba20aee.0e8355",
+        "type": "ui_group",
+        "name": "Feedback",
+        "tab": "be2adfe.9f92d2",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "be2adfe.9f92d2",
+        "type": "ui_tab",
+        "name": "Coltun-Stream",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
